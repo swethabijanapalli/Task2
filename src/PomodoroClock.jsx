@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import styled from "styled-components";
 import "./PomodoroClock.css";
 
 const PomodoroClock = () => {
@@ -73,6 +74,22 @@ const PomodoroClock = () => {
   const progressBarValue =
     ((minutes * 60 + seconds) / (isBreak ? 300 : 1500)) * 100;
 
+  const StyledDiv = styled.div`
+    width: 200px;
+    position: relative;
+    left: 37%;
+
+    @media (max-width: 768px) {
+      width: 150px;
+      left: 30%;
+    }
+
+    @media (max-width: 480px) {
+      width: 120px;
+      left: 34%;
+    }
+  `;
+
   return (
     <div>
       <h1>Pomodoro Clock</h1>
@@ -88,12 +105,33 @@ const PomodoroClock = () => {
       </div>
       <div className="time">
         <p>{isBreak ? "Break" : "Work"}</p>
-        <div style={{ width: "200px", position: "relative", left: "20%" }}>
+        {/* <div
+          style={{
+            width: "200px",
+            position: "relative",
+            left: "30%",
+            "@media (maxWidth: 768px)": {
+              // width: "200px",
+              left: "30%",
+            },
+            "@media (maxWidth: 480px)": {
+              width: "200px",
+              left: "20%",
+            },
+          }}
+        >
           <CircularProgressbar
             value={progressBarValue}
             text={`${minutes}:${seconds.toString().padStart(2, "0")}`}
           />
-        </div>
+        </div> */}
+        <StyledDiv>
+          <CircularProgressbar
+            value={progressBarValue}
+            text={`${minutes}:${seconds.toString().padStart(2, "0")}`}
+          />
+        </StyledDiv>
+
         <p>Cycles Left: {cycles}</p>
       </div>
       <div>

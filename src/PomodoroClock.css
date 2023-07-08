@@ -42,6 +42,11 @@ button:hover {
   .limit input {
     width: 59%;
   }
+  .bar {
+    width: "200px";
+    position: "relative";
+    left: "30%";
+  }
 }
 
 @media screen and (max-width: 480px) {
