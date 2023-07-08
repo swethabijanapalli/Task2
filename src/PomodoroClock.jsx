@@ -81,7 +81,7 @@ const PomodoroClock = () => {
 
     @media (max-width: 768px) {
       width: 150px;
-      left: 30%;
+      left: 38%;
     }
 
     @media (max-width: 480px) {
@@ -91,7 +91,7 @@ const PomodoroClock = () => {
   `;
 
   return (
-    <div>
+    <div className="container">
       <h1>Pomodoro Clock</h1>
       <div className="limit">
         <p>Cycle Limit : </p>
