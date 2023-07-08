@@ -1,0 +1,55 @@
+.limit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+}
+h1 {
+  font-size: 40px;
+}
+.limit p {
+  margin: 10px;
+}
+.limit input {
+  border: none;
+}
+.time {
+  text-align: center;
+}
+button {
+  height: 30px;
+  width: 70px;
+  margin: 10px;
+  color: rgb(94, 97, 100);
+  border: none;
+  border-radius: 15px;
+}
+button:hover {
+  color: black;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .limit {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .limit input {
+    width: 59%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    width: 100px;
+  }
+}
